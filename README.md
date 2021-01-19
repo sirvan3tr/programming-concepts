@@ -1,15 +1,26 @@
 # Programming Concepts 
 Single and open source of programming concepts.
 
+### monad
+A monad is composed of three functions and encodes control flow which allows
+pure functions to be strung together.o
 
-### map()
+### Pure functions
+Pure functions always return the same output for a given input regardless of environment and cause no side effects.
+
+### Lambda functions
+A lambda is an unnamed function.
+
+### Fold
+Fold applies a function between elements of a list.
+
+### map
 - On JavaScript ```array1.map(x => x * 2);```
 
-### reduce()
+### reduce
 - ```arr.reduce(callback( accumulator, currentValue, [, index[, array]] )[, initialValue])```
 
-
-### filter()
+### filter
 - **Python** ```filter(func, iterable)``` returns only elements in iterable when func returns True for the element.
 
 ## Strings
