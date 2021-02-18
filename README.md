@@ -36,6 +36,7 @@ Fold applies a function between elements of a list.
   - `string.title()` Returns string in title case
   - `string.upper()`
 
+[Clojure Strings](https://www.tutorialspoint.com/clojure/clojure_strings.htm)
 ## Installation
 ```
 $ pip install sphinx
