@@ -24,6 +24,17 @@ Fold applies a function between elements of a list.
 - **Python** ```filter(func, iterable)``` returns only elements in iterable when func returns True for the element.
 
 ## Strings
+- **Python**
+  - `string.replace(x, y)`
+  - `string.split(x)`
+  - `string.count(x)`
+  - `x.join(y)`
+  - `string.find(x)`
+  - `string.format(x,y,...)` Replaces `{}` with the given arguments.
+  - `string.lower()`
+  - `string.strip()`
+  - `string.title()` Returns string in title case
+  - `string.upper()`
 
 ## Installation
 ```
