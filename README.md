@@ -1,6 +1,18 @@
 # Programming Concepts 
 Single and open source of programming concepts.
 
+### Syntax and Semantics
+Peter Norvig, in a [blog post](http://www.norvig.com/lispy.html) 
+[@norvigHowWriteLisp2021], explains syntax and semantics as follows. "The
+syntax of a language is the arrangement of characters to form correct statements
+or expressions; the semantics is the meaning of those statements or
+expressions." Syntax and semantics are not unique concepts to programming,
+infact they are used in formal logics. Peter Smith
+[@smithIntroductionFormalLogic2020] describes semantics as *meaning* and
+*truth*. He describes *syntax* as the grammar of logic-baesd languages: "The
+syntax of a language tells us, which strings of symbols count as grammatical
+sentences" [@smithIntroductionFormalLogic2020], p.72. 
+
 ### monad
 A monad is composed of three functions and encodes control flow which allows
 pure functions to be strung together.o
