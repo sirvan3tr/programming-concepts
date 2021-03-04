@@ -1,0 +1,20 @@
+;; DOM management
+getAttribute()
+setAttribute(x, y)
+removeAttribute(x)
+
+getElementById()
+getElementByClassName()
+getElementByTagname()
+querySelectorAll()
+
+element.classList.add() remove() toggle() contains()
+
+document.createElement("div")
+document.createTextNode()
+appendChild()
+removeChild()
+hasChildNodes()
+insertBefore(x, y)
+insertAdjacentHTML()
+
