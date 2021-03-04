@@ -1,5 +1,5 @@
 ---
-bibliography: ref.bib
+bibliography: ref.bibtex
 ---
 
 # Programming Concepts
@@ -87,5 +87,7 @@ Strings](https://www.tutorialspoint.com/clojure/clojure_strings.htm)
 # Resources
 
 -   **Prof Alan Mycroft** - Cambridge course on Programming Concepts
+
+# References
 
 Copyrights 2021 Sirvan Almasi
