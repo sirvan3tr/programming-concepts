@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="programming-concepts">Programming Concepts</h1>
+<p>Single and open source of programming concepts.</p>
+<h3 id="syntax-and-semantics">Syntax and Semantics</h3>
+<p>Peter Norvig, in a <a href="http://www.norvig.com/lispy.html">blog post</a> <span class="citation" data-cites="norvigHowWriteLisp2021">[1]</span>, explains syntax and semantics as follows. “The syntax of a language is the arrangement of characters to form correct statements or expressions; the semantics is the meaning of those statements or expressions.” Syntax and semantics are not unique concepts to programming, In-fact they are used in formal logic. Peter Smith <span class="citation" data-cites="smithIntroductionFormalLogic2020">[2]</span> describes semantics as <em>meaning</em> and <em>truth</em>. He describes <em>syntax</em> as the grammar of logic-based languages: “The syntax of a language tells us, which strings of symbols count as grammatical sentences” <span class="citation" data-cites="smithIntroductionFormalLogic2020">[2]</span>, p.72.</p>
+<p>[Comparison of languages](https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(basic_instructions)</p>
+<ul>
+<li>Types
+<ul>
+<li>Primitive
+<ul>
+<li>Boolean</li>
+<li>Character</li>
+<li>Integer</li>
+<li>Floating</li>
+</ul></li>
+<li>Composite/data structures
+<ul>
+<li>Tuple (Cartesian products)</li>
+<li>Record</li>
+<li>Array (mappings)</li>
+<li>List (recursive)</li>
+</ul></li>
+</ul></li>
+<li>Variables</li>
+<li>Control flow
+<ul>
+<li>Conditions</li>
+<li>Loops</li>
+<li>Exceptions</li>
+</ul></li>
+<li>Functions</li>
+<li>Expressions (programming construct that evaluates to a value)</li>
+<li>I/O Stream</li>
+</ul>
+<p><a href="http://www.norvig.com/python-lisp.html">Python vs Lisp Comparison</a> ### Types * Primitive * Composite</p>
+<h3 id="operations-and-access">Operations and access</h3>
+<ul>
+<li>Get subset of <code>list[start:end]</code></li>
+<li>First</li>
+<li>Rest</li>
+<li>Equal?</li>
+<li>Empty?</li>
+<li>Length</li>
+<li>Find</li>
+<li>reverse</li>
+<li>slice</li>
+<li>sort</li>
+</ul>
+<h3 id="monad">monad</h3>
+<p>A monad is composed of three functions and encodes control flow which allows pure functions to be strung together.o</p>
+<h3 id="pure-functions">Pure functions</h3>
+<p>Pure functions always return the same output for a given input regardless of environment and cause no side effects.</p>
+<h3 id="lambda-functions">Lambda functions</h3>
+<p>A lambda is an unnamed function.</p>
+<h3 id="fold">Fold</h3>
+<p>Fold applies a function between elements of a list.</p>
+<h3 id="map">map</h3>
+<ul>
+<li>On JavaScript <code>array1.map(x =&gt; x * 2);</code></li>
+</ul>
+<h3 id="reduce">reduce</h3>
+<ul>
+<li><code>arr.reduce(callback( accumulator, currentValue, [, index[, array]] )[, initialValue])</code></li>
+</ul>
+<h3 id="filter">filter</h3>
+<ul>
+<li><strong>Python</strong> <code>filter(func, iterable)</code> returns only elements in iterable when func returns True for the element.</li>
+</ul>
+<h2 id="strings">Strings</h2>
+<ul>
+<li><strong>Python</strong>
+<ul>
+<li><code>string.replace(x, y)</code></li>
+<li><code>string.split(x)</code></li>
+<li><code>string.count(x)</code></li>
+<li><code>x.join(y)</code></li>
+<li><code>string.find(x)</code></li>
+<li><code>string.format(x,y,...)</code> Replaces <code>{}</code> with the given arguments.</li>
+<li><code>string.lower()</code></li>
+<li><code>string.strip()</code></li>
+<li><code>string.title()</code> Returns string in title case</li>
+<li><code>string.upper()</code></li>
+</ul></li>
+</ul>
+<p><a href="https://www.tutorialspoint.com/clojure/clojure_strings.htm">Clojure Strings</a> ## Installation</p>
+<pre><code>$ pip install sphinx
+$ sphinx-quickstart
+$ sphinx-build -b html sourcedir builddir
+
+OR if you&#39;re using mkdocs
+$ pip install mkdocs</code></pre>
+<h1 id="books">Books</h1>
+<ul>
+<li><strong>M. Scott</strong>. Programming Language Pragmatics (2nd edition). Morgan Kaufmann, 2006.</li>
+<li><strong>J.C. Mitchell</strong>. Concepts in programming languages. Cambridge University Press, 2003.</li>
+<li><strong>T.W.Pratt and M.V.Zelkowitz</strong>. Programming Languages: Design and implementation (3rd edition). Prentice Hall, 1999.</li>
+</ul>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><strong>Prof Alan Mycroft</strong> - Cambridge course on Programming Concepts</li>
+</ul>
+<p>Copyrights 2021 Sirvan Almasi</p>
+<div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="ref-norvigHowWriteLisp2021" class="csl-entry" role="doc-biblioentry">
+<p><div class="csl-left-margin">[1] </div><div class="csl-right-inline">P. Norvig, <span>“(<span>How</span> to <span>Write</span> a (<span>Lisp</span>) <span>Interpreter</span> (in <span>Python</span>)),”</span> <em>(How to Write a (Lisp) Interpreter (in Python))</em>. Mar-2021.</div></p>
+</div>
+<div id="ref-smithIntroductionFormalLogic2020" class="csl-entry" role="doc-biblioentry">
+<p><div class="csl-left-margin">[2] </div><div class="csl-right-inline">P. Smith, <em>An <span>Introduction</span> to <span>Formal Logic</span></em>, Second. <span>Cambridge</span>: <span>Cambridge University Press</span>, 2020.</div></p>
+</div>
+</div>
+</body>
+</html>
