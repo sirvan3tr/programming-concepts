@@ -67,19 +67,25 @@ Fold applies a function between elements of a list.
 - **Python** ```filter(func, iterable)``` returns only elements in iterable when func returns True for the element.
 
 ## Strings
-- **Python**
-  - `string.replace(x, y)`
-  - `string.split(x)`
-  - `string.count(x)`
-  - `x.join(y)`
-  - `string.find(x)`
-  - `string.format(x,y,...)` Replaces `{}` with the given arguments.
-  - `string.lower()`
-  - `string.strip()`
-  - `string.title()` Returns string in title case
-  - `string.upper()`
+| Python                 | Clojure                                                                                            | APL                 | C++ | Rust |
+|------------------------|----------------------------------------------------------------------------------------------------|---------------------|-----|---|
+| string.replace(x, y)   | (replace str match replacement)                                                                    |                     |     |   |
+| string.split(x)        | (split str reg)                                                                                    | ','⊢'one,two,three' |     |   |
+| string.count(x)        | (count str)                                                                                        |                     |     |   |
+| x.join(y)              | (join sep col)                                                                                     |                     |     |   |
+| string.find(x)         | (re-find #"Osiris" "The Band Named Isis") ; RegEx (.contains "The Band Named Isis" "Isis")  ; Java |                     |     |   |
+| string.format(x,y,...) | (format fmt args)                                                                                  |                     |     |   |
+| string.lower()         | (lower-case str)                                                                                   |                     |     |   |
+| string.strip()         | (trim str)                                                                                         |                     |     |   |
+| string.title()         |                                                                                                    |                     |     |   |
+| string.upper()         | (upper-case str)                                                                                   |                     |     |   |
+| string.rfind(x)        |                                                                                                    |                     |     |   |
+| string.reverse()       | (reverse str)                                                                                      |                     |     |   |
+|                        | (subs s start end)                                                                                 |                     |     |   |
+
 
 [Clojure Strings](https://www.tutorialspoint.com/clojure/clojure_strings.htm)
+
 ## Installation
 ```
 $ pip install sphinx
