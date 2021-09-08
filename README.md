@@ -67,25 +67,26 @@ Fold applies a function between elements of a list.
 - **Python** ```filter(func, iterable)``` returns only elements in iterable when func returns True for the element.
 
 ## Strings
-| Python                 | Clojure                                                                                            | APL                 | C++ | Rust |
-|------------------------|----------------------------------------------------------------------------------------------------|---------------------|-----|---|
-| string.replace(x, y)   | (replace str match replacement)                                                                    |                     |     | str.replace(x, y)   |
-| string.split(x)        | (split str reg)                                                                                    | ','⊢'one,two,three' |     | str.split(x)   |
-| string.count(x)        | (count str)                                                                                        |                     |     |   |
-| x.join(y)              | (join sep col)                                                                                     | 'x',⍕'y'            |     |   |
-| string.find(x)         | (re-find #"Osiris" "The Band Named Isis") ; RegEx (.contains "The Band Named Isis" "Isis")  ; Java |                     |     |   |
-| string.format(x,y,...) | (format fmt args)                                                                                  |                     |     |   |
-| string.lower()         | (lower-case str)                                                                                   |                     |     |   |
-| string.strip()         | (trim str)                                                                                         |                     |     | str.trim()   |
-| string.title()         |                                                                                                    |                     |     |   |
-| string.upper()         | (upper-case str)                                                                                   |                     |     |   |
-| string.rfind(x)        |                                                                                                    |                     |     |   |
-| string.reverse()       | (reverse str)                                                                                      |                     |     |   |
-|                        | (subs s start end)                                                                                 |                     |     |   |
-|                        |                                                                                                    |                     |     | to_string()  |
-|                        |                                                                                                    |                     |     | push() |
-|                        |                                                                                                    |                     |     | chars() |
-|                        |                                                                                                    |                     |     | len() |
+| Python                 | Clojure                                                                                            | APL                 | C++                            | Rust                      |
+|------------------------|----------------------------------------------------------------------------------------------------|---------------------|--------------------------------|---------------------------|
+| string.replace(x, y)   | (replace str match replacement)                                                                    |                     | str.replace(19,6,str1,7,6)     | str.replace(x, y)         |
+| string.split(x)        | (split str reg)                                                                                    | ','⊢'one,two,three' | str.substr(0, str.find(delim)) | str.split(x)              |
+| string.count(x)        |                                                                                                    |                     |                                | str.matches(str1).count() |
+| x.join(y)              | (join sep col)                                                                                     | 'x',⍕'y'            |                                |                           |
+| string.find(x)         | (re-find #"Osiris" "The Band Named Isis") ; RegEx (.contains "The Band Named Isis" "Isis")  ; Java |                     |                                |                           |
+| string.format(x,y,...) | (format fmt args)                                                                                  |                     |                                |                           |
+| string.lower()         | (lower-case str)                                                                                   |                     |                                |                           |
+| string.strip()         | (trim str)                                                                                         |                     |                                | str.trim()                |
+| string.title()         |                                                                                                    |                     |                                |                           |
+| string.upper()         | (upper-case str)                                                                                   |                     |                                |                           |
+| string.rfind(x)        |                                                                                                    |                     |                                |                           |
+| string.reverse()       | (reverse str)                                                                                      |                     |                                |                           |
+|                        | (subs s start end)                                                                                 |                     |                                |                           |
+| str(obj)               |                                                                                                    |                     |                                | to_string()               |
+| str1 + str2            | (str st1 str2)                                                                                     |                     |                                | push()                    |
+|                        |                                                                                                    |                     |                                | chars()                   |
+| len(str)               | (count str)                                                                                        |                     |                                | len()                     |
+
 
 
 [Clojure Strings](https://www.tutorialspoint.com/clojure/clojure_strings.htm)
