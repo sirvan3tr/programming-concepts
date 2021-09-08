@@ -72,7 +72,7 @@ Fold applies a function between elements of a list.
 | string.replace(x, y)   | (replace str match replacement)                                                                    |                     |     |   |
 | string.split(x)        | (split str reg)                                                                                    | ','⊢'one,two,three' |     |   |
 | string.count(x)        | (count str)                                                                                        |                     |     |   |
-| x.join(y)              | (join sep col)                                                                                     |                     |     |   |
+| x.join(y)              | (join sep col)                                                                                     | 'x',⍕'y'            |     |   |
 | string.find(x)         | (re-find #"Osiris" "The Band Named Isis") ; RegEx (.contains "The Band Named Isis" "Isis")  ; Java |                     |     |   |
 | string.format(x,y,...) | (format fmt args)                                                                                  |                     |     |   |
 | string.lower()         | (lower-case str)                                                                                   |                     |     |   |
