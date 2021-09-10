@@ -120,6 +120,12 @@ First do `import csv`
 * **READ**.  `(slurp 'filename.txt')`
 * **WRITE**.  `(spit 'filename.txt' 'content')`
 * For more complex operations, you need to use java features: `(:require [clojure.java.io :as io])`
+	* e.g. `(.exists (io/file "filename.txt"))`
+	* `isDirectory`
+	* `getName` Basename of the file.
+	* `getParent` Dirname of the file.
+	* `getPath` Filename with directory.
+	* `mkdir`
 
 ## Installation
 ```
