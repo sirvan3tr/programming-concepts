@@ -127,6 +127,13 @@ First do `import csv`
 	* `getPath` Filename with directory.
 	* `mkdir`
 
+# Array Programming and Matrices
+* Addition
+* Scalar multiplication
+* Transposition
+* Matrix multiplication
+* Inversion
+
 ## Installation
 ```
 $ pip install sphinx
