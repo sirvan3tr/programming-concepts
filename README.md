@@ -91,6 +91,36 @@ Fold applies a function between elements of a list.
 
 [Clojure Strings](https://www.tutorialspoint.com/clojure/clojure_strings.htm)
 
+## Files/IO
+Files such as a `.csv` is often more *convenient* to open such that it is to be
+operated on as a matrix (i.e. rows and columns). Therefore, we can imagine that
+there are functions that open and automatically parse the file as per the file's format.
+
+### Python
+```
+with open(x) as f:
+	...
+```
+
+* `f.read()`
+* `f.readline()`
+* `f.readlines() -> list` or you can do `list(f)`
+
+#### JSON
+First do `import json`
+
+* `json.load(f)`
+ 
+#### CSV
+First do `import csv`
+
+* `csv.reader(f, delimiter=',')`
+
+### Clojure
+* **READ**.  `(slurp 'filename.txt')`
+* **WRITE**.  `(spit 'filename.txt' 'content')`
+* For more complex operations, you need to use java features: `(:require [clojure.java.io :as io])`
+
 ## Installation
 ```
 $ pip install sphinx
