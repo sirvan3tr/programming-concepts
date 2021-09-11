@@ -97,6 +97,7 @@ operated on as a matrix (i.e. rows and columns). Therefore, we can imagine that
 there are functions that open and automatically parse the file as per the file's format.
 
 ### Python
+
 ```
 with open(x) as f:
 	...
