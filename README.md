@@ -28,6 +28,10 @@ syntax of a language is the arrangement of characters to form correct statements
 * I/O Stream
 
 [Python vs Lisp Comparison](http://www.norvig.com/python-lisp.html)
+
+### Code is data (everything is data)
+let us think of everything in a system as data, even the code itself. Therefore, when designing a program, understanding and designing the data structure and manipulation of it becomes more important.
+
 ### Types
 * Primitive
 * Composite
