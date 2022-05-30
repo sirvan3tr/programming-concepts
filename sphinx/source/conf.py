@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Programming Concepts'
+project = '3TR'
 copyright = '2021, Sirvan Almasi'
 author = 'Sirvan Almasi'
 
@@ -36,8 +36,13 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+extensions = ['myst_parser']
 
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'markdown',
+    '.md': 'markdown',
+}
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -45,6 +50,19 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 html_theme = 'alabaster'
+# html_theme = 'python_docs_theme'
+
+# import sphinx_nameko_theme
+# html_theme = 'nameko'
+# html_theme_path = [sphinx_nameko_theme.get_html_theme_path()]
+
+# import sphinx_readable_theme
+# html_theme = 'readable'
+# html_theme_path = [sphinx_readable_theme.get_html_theme_path()]
+
+# html_theme = 'sphinx_book_theme'
+
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

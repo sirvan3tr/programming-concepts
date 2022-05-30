@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Python &#8212; 3TR  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Javascript" href="javascript.html" />
+    <link rel="prev" title="Programming Concepts" href="programming_concepts.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="advanced-python">
+<h1>Advanced Python<a class="headerlink" href="#advanced-python" title="Permalink to this headline">¶</a></h1>
+<p>Advanced Python tips and tricks. This includes methods in optimising and improving the speed of your Python code.</p>
+<div class="section" id="keyword-and-positional-only-arguments">
+<h2>Keyword and Positional-only arguments<a class="headerlink" href="#keyword-and-positional-only-arguments" title="Permalink to this headline">¶</a></h2>
+<p>You can separate the positional arguments with keyword-only arguments with an ‘*’. This is to improve code readability.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fab</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">arg3</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">&#39;fab&#39;</span>
+</pre></div>
+</div>
+<p>Similarly you can positonal-only arguments with a <code class="docutils literal notranslate"><span class="pre">/</span></code> character. Python 3.8+</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="classes-and-objects">
+<h2>Classes and objects<a class="headerlink" href="#classes-and-objects" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-classes">
+<h3><a class="reference external" href="https://docs.python.org/3/library/dataclasses.html">Data classes</a><a class="headerlink" href="#data-classes" title="Permalink to this headline">¶</a></h3>
+<p>Available from Python3.7</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">InventoryItem</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Class for keeping track of an item in inventory.&quot;&quot;&quot;</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">total_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit_price</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantity_on_hand</span>
+</pre></div>
+</div>
+<p>You can make a dataclass instance immutable by passing <code class="docutils literal notranslate"><span class="pre">frozen=True</span></code> to the decorator. However, there is a performance cost to this.</p>
+</div>
+<div class="section" id="slots">
+<h3><a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#slots"><strong>slots</strong></a><a class="headerlink" href="#slots" title="Permalink to this headline">¶</a></h3>
+<p>Explicitly declare data members and deny the creation of <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> and <code class="docutils literal notranslate"><span class="pre">__wakeref__</span></code> in order to give you a performance boost (e.g. saving memory, and faster attribute access). More detailed explanation and usage can be found <a class="reference external" href="https://stackoverflow.com/questions/472000/usage-of-slots">here</a>. <code class="docutils literal notranslate"><span class="pre">__slots__</span></code> is a feature of <code class="docutils literal notranslate"><span class="pre">dataclass</span></code> as of Python 3.10.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Base</span><span class="p">:</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="computed-attributes">
+<h3>Computed attributes<a class="headerlink" href="#computed-attributes" title="Permalink to this headline">¶</a></h3>
+<p>Computing based on an objects set of attributes might be useful in various scenarios.</p>
+<p>This example uses the <code class="docutils literal notranslate"><span class="pre">__getattr__</span></code> to compute some value based on the objects attributes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">23</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">87</span>
+  
+  <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">attr</span> <span class="o">==</span> <span class="s2">&quot;vec&quot;</span><span class="p">:</span>
+          <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>TODO: <code class="docutils literal notranslate"><span class="pre">__setattr__</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="class-numerical-operators">
+<h3>Class numerical operators<a class="headerlink" href="#class-numerical-operators" title="Permalink to this headline">¶</a></h3>
+<p>You can add an <code class="docutils literal notranslate"><span class="pre">i</span></code> to each of the keywords below in order to allow for the respective shorthand operation. e.g. <code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">+=</span> <span class="pre">other</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__add__</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__sub__</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__mul__</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__div__</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__floordiv__</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__pow__</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__and__</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__or__</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="other">
+<h2>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="template-strings">
+<h3>Template strings<a class="headerlink" href="#template-strings" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s2">&quot;Hello $</span><span class="si">{name}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">str1</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Bob&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Variable argument list.</p></li>
+<li><p>Logging</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="faster-python">
+<h2>Faster Python<a class="headerlink" href="#faster-python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="profiling">
+<h3>Profiling<a class="headerlink" href="#profiling" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="line-profiler">
+<h4>line_profiler<a class="headerlink" href="#line-profiler" title="Permalink to this headline">¶</a></h4>
+<p>line_profiler is a module for doing line-by-line profiling of functions. kernprof is a convenient script for running either line_profiler or the Python standard library’s cProfile or profile modules, depending on what is available.</p>
+<p><code class="docutils literal notranslate"><span class="pre">line_profiler</span></code> is an external package that can be installed by <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">line_profiler</span></code>.</p>
+<ul class="simple">
+<li><p>In order to a profile a specific function, you add a decorator, <code class="docutils literal notranslate"><span class="pre">&#64;profile</span></code>, to the desired function.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">kernprof</span> <span class="pre">-l</span> <span class="pre">YOURCODE.PY</span></code>, this will create a *.lprof file for you which can be viewed by running <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">line_profiler</span> <span class="pre">YOURCODE.PY.lprof</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="other-and-caching">
+<h3>Other and caching<a class="headerlink" href="#other-and-caching" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>TODO: Measuring time</p></li>
+<li><p>TODO: CPU profiling</p></li>
+<li><p>TODO: Tracing memory allocations and memory_profiler</p></li>
+<li><p>TODO: Local caching of names</p></li>
+<li><p>TODO: Pre-calculating</p></li>
+<li><p>TODO: lru_cache</p></li>
+<li><p>TODO: Cython</p></li>
+<li><p>TODO: Threads and processes</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="new-features">
+<h2>New features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h2>
+<p>These are new(ish) features that one should be aware of in order to move on to a more current way of writing python codes.</p>
+<ul class="simple">
+<li><p>[py3.8] <strong>Walrus Operator:</strong>  ‘:=’ allows one to declare and assign a variable. <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(n</span> <span class="pre">:=</span> <span class="pre">len(a))</span> <span class="pre">&gt;</span> <span class="pre">10:</span></code></p></li>
+<li><p>etc.</p></li>
+</ul>
+</div>
+<div class="section" id="development-environment">
+<h2>Development environment<a class="headerlink" href="#development-environment" title="Permalink to this headline">¶</a></h2>
+<p>TODO: Common environments for productivity.</p>
+<div class="section" id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>https://uwpce-pythoncert.github.io/SystemDevelopment/profiling.html</p></li>
+<li><p>[Book] Serious Python by Julien Danjou</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Other<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Python obfuscation
+<a class="reference external" href="https://pypi.org/project/pyarmor/">https://pypi.org/project/pyarmor/</a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">3TR</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="programming_concepts.html">Programming Concepts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javascript.html">Javascript</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="programming_concepts.html" title="previous chapter">Programming Concepts</a></li>
+      <li>Next: <a href="javascript.html" title="next chapter">Javascript</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Sirvan Almasi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/advanced_python.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
